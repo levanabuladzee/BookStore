@@ -1,6 +1,5 @@
 package dao;
 
-import model.Books;
 import model.Cart;
 import util.DBConnection;
 
