@@ -15,8 +15,8 @@ public class RemoveFromCartServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String url = "/cart";
         CartDAO dao = new CartDAO();
-        int bookId = Integer.parseInt(req.getParameter("bookId"));
-        dao.removeBook(bookId);
+        int cartId = Integer.parseInt(req.getParameter("cartId"));
+        dao.removeBook(cartId);
 
         resp.sendRedirect(req.getContextPath() + url);
     }

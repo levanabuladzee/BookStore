@@ -36,7 +36,7 @@
                 <td>${cart.bookPrice}$</td>
                 <td>
                     <form action="remove-from-cart" method="post">
-                        <input name="bookId" type="hidden" value="${cart.bookId}">
+                        <input name="cartId" type="hidden" value="${cart.cartId}">
                         <input name="cart" type="submit" value="Remove from Cart">
                     </form>
                 </td>

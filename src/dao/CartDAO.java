@@ -64,16 +64,16 @@ public class CartDAO {
         return carts;
     }
 
-    public void removeBook(int bookId) {
+    public void removeBook(int cartId) {
         DBConnection dbConnection = new DBConnection();
         Connection connection = dbConnection.connectDB();
-        String sql = "DELETE FROM cart WHERE cart_id = (SELECT cart_id FROM cart WHERE cart_book_id = ? LIMIT 1)";
+        String sql = "DELETE FROM cart WHERE cart_id = (SELECT cart_id FROM cart WHERE cart_id = ?)";
 
         PreparedStatement preparedStatement = null;
 
         try {
             preparedStatement = connection.prepareStatement(sql);
-            preparedStatement.setInt(1, bookId);
+            preparedStatement.setInt(1, cartId);
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
